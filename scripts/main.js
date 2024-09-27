@@ -6,3 +6,13 @@ fetch('https://randomfox.ca/floof')
             foxImgElement.src = convertedData.image
         }
     )
+
+
+const getTheDog = async () => {
+    const response = await fetch("https://random.dog/woof.json")
+    const dogJSONConvertedToObject = await response.json()
+    const dogImgElement = document.querySelector("#dog")
+    dogImgElement.src = dogJSONConvertedToObject.url
+}
+
+getTheDog()
